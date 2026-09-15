@@ -1,0 +1,162 @@
+/*----------VARIÁVEIS GLOBAIS------------*/
+ 
+:root {
+  /*Configuração da fonte*/
+  --fonte-texto: "Tahoma";
+  --fonte-titulo: "Space Grotesk";
+  --fonte-mono: "JetBrains Mono";
+
+  /*Cores*/
+  --cor-texto-variacao: #70454e;
+  --cor-borda: #5a372c;
+  --cor-fundo: #f0f0d8;
+  --cor-titulo-tag: #98c7b0;
+  --cor-texto-suave: #667085;
+  --cor-clara:#a09494;
+}
+/*===============*/
+*{
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family:var(--fonte-texto);
+}
+/*Limpa a configuração padrão dos links feitas pelo navegador*/
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+/*Estilização oadrão dos títulos tipo "tag HTML" de cada seção*/
+.tag-secao{
+    display:inline-block;
+    font-size: 14px;
+    font-family: var(--fonte-mono);
+    color: var(--cor-titulo-tag);
+    background-color: rgba(15,157,139,0.1);
+    border-radius: 6px; /*Bordas arredondadas*/
+    margin-bottom: 16px; /*Margem Inferrior*/
+    padding: 4px 12px; /*Espaçamento topo e direita*/
+}
+/*Estilização de Botões - 2 Estilos*/
+.botao{
+    display: inline-block;
+    font-family: var(--fonte-texto);
+    font-size: 16px;
+    font-weight: 600; /*Negritro*/
+    padding: 12px 28px; /*Espaçamento no topo e na direita*/
+    border-radius: 999px;
+    transition: transform 0.2s ease, box-shadow 0.2 ease;
+}
+.botao:hover{
+    transform: translatey(-2px)
+}
+.botao-primario{
+    background-color: var(--cor-texto-variacao);
+    color: #FFFFFF;
+    box-shadow: 0 8px 20px rgba(15,157,139,0.35);
+}
+.botao-primario:hover{
+    background-color: var(--cor-clara);
+}
+.botao-secundario{
+    border: 2px solid var(--cor-clara);
+}
+.botao-secundario:hover{
+    background-color: var(--cor-clara);
+    color: var(--cor-texto-variacao);
+}
+
+/*----------------------
+  CABEÇALHO
+*/
+.nome{
+  font-size: 28px; /*Definir o tamanho da fonte*/
+  font-weight: bold; /*Fonte em negrito*/
+}
+.nome span{
+  color: var(--cor-texto-variacao);
+}
+.cabecalho{
+  background-color: rgba(245,247,250,0.85); /*Define a cor do fundo com 0.85*/
+  backdrop-filter: blur(8px); /*Aplica o efeito blur ao passar o */
+  position: sticky; /*Define a posição "parada" para o cabeçalho,*/
+  z-index: 100; /*Trás o cabeçalho pra frente pro conteúdo passar */
+  top: 0; /*Define que o cabeçalho ficará parado no topo*/
+  border-bottom: 1px solid var(--cor-borda);
+
+}
+.cabecalho .container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+}
+.menu{
+  display: flex;
+  gap: 32px;
+}
+.menu a{
+    font-size: 24px;
+    position: relative;
+    padding-bottom: 4px;
+}
+.menu a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #70454e;
+    transition: width 0.25s ease;
+}
+.menu a:hover::after{
+    width: 100%;
+}
+
+/*----------APRESENTAÇÃO------------*/
+.apresentacao{
+    padding: 96px;
+    background-color: var(--cor-fundo)
+}
+.apresentacao .container{
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+    align-items: center;
+}
+.apresentacao-titulo{
+    font-family: var(--fonte-titulo);
+    font-size: 40px;
+    margin-bottom: 16px;
+}
+.apresentacao-titulo .destaque{
+    color: var(--cor-texto-variacao);
+}
+.apresentacao-cargo{
+    font-family: var(--fonte-mono);
+    color: var(--cor-texto-suave);
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.apresentacao-bio{
+    color: var(--cor-texto-suave);
+    font-size: 16px;
+    max-width: 480px; /*Tamanho máximo do elemento*/
+    margin-bottom: 32px; /*Margem inferior*/
+    line-height: 1.5;/*Espaçamento entre linhas*/
+}
+.apresentacao-foto{
+    position: relative;
+}
+.apresentacao-foto img{
+    border-radius: 24px; /*Bordas arrendondadas*/
+    background-color: rgba(245,247,250,0.85);
+}
+.apresentacao-botoes{
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
